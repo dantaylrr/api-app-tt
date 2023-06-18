@@ -211,17 +211,23 @@ We can verify that our virtual environment has been successfully created by runn
 
 Let's finish off getting started by installing our dependencies listed in `requirements.txt` & setting up the project root as a package (for relative imports).
 
-Run the following from the project root:
+Run the following two commands from the project root:
+
+1). Install `requirements.txt` in our virtual environment:
+
+```
+pip3 install -r requirements.txt
+```
+
+2). Using `setup.py`, package our application code to be usable:
 
 ```
 pip3 install .
 ```
 
-This will set-up our working directory using the `setup.py` script in the project root.
-
 Note - if you want to make changes to code & have changes reflected in any subsequent application runs, install `setup.py` in "developer" mode by specifying the `-e` flag to the above command.
 
-Now that the above command has finished running - we are almost ready to run some tests & our application locally.
+Now that the above commands have finished running - we are almost ready to run some tests & our application locally.
 
 # **Running tests.**
 
