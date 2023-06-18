@@ -240,6 +240,8 @@ Before we run our tests, let's define our environment variables, in the project 
 ```
 export KRAKEN_API_URL=<url>
 ```
+**Important Note - please set the base API URL WITHOUT the trailing "/" for the application to work.**
+
 &
 ```
 export KRAKEN_API_KEY=<key>
