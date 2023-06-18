@@ -19,7 +19,7 @@ def mount_endpoint(retry_strategy: Retry = _define_retry_strategy()):
         req_session = requests.Session()
         # Mount our retry strategy onto the session - we will use the https:// prefix for the most re-usability
         req_session.mount(
-            prefix=f"https://", adapter=HTTPAdapter(max_retries=retry_strategy)
+            prefix="https://", adapter=HTTPAdapter(max_retries=retry_strategy)
         )
 
         # Return the session for re-usability throughout code
@@ -41,7 +41,7 @@ def get_outages(
 ):
     # Using the requests library, we can issue get requests on API endpoints
     try:
-        logger.info(f"Attempting to issue GET request to outages API endpoint...")
+        logger.info("Attempting to issue GET request to outages API endpoint...")
         # Ping the API endpoint using our session - returns a response Object
         response = requests_session.get(
             url=f"{api_endpoint_url}/outages", headers=headers
@@ -67,7 +67,7 @@ def get_site_info(
 ):
     # Using the requests library, we can issue get requests on API endpoints
     try:
-        logger.info(f"Attempting to issue GET request to site-info API endpoint...")
+        logger.info("Attempting to issue GET request to site-info API endpoint...")
         # Ping the API endpoint using our session - returns a response Object
         response = requests_session.get(
             url=f"{api_endpoint_url}/site-info/norwich-pear-tree", headers=headers
@@ -97,7 +97,7 @@ def post_results(
     # Using the requests library, we can issue get requests on API endpoints
     try:
         logger.info(
-            f"Attempting to POST results to site-info/<site-id> API endpoint..."
+            "Attempting to POST results to site-info/<site-id> API endpoint..."
         )
         # Ping the API endpoint using our session - returns a response Object
         response = requests_session.post(

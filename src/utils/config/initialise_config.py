@@ -41,18 +41,18 @@ def _extract_config_values(config_path: str):
 
 
 def _extract_ssm_values(ssm_api_url: str, ssm_api_key: str):
-    # Instanciate SSM client so that we can interact with parameter store
+    # Instantiate SSM client so that we can interact with parameter store
     try:
         ssm_client = boto3.client("ssm")
     except HTTPClientError as ssm_err:
         # Raise RuntimeError so that we can establish connectivity to client before attempting to continue
-        logger.error(f"Cannot establish boto3 SSM client - attempting to reprocess.")
+        logger.error("Cannot establish boto3 SSM client - attempting to reprocess.")
         raise RuntimeError(
-            f"Cannot establish boto3 SSM client - attempting to reprocess."
+            "Cannot establish boto3 SSM client - attempting to reprocess."
         )
 
     try:
-        # Secrets are encrpyted at rest using my AWS accounts' default KMS key, my assumed user at run-time is authorised to use this KMS key
+        # Secrets are encrypted at rest using my AWS accounts' default KMS key, my assumed user at run-time is authorised to use this KMS key
         # Typically a service role, i.e. lambda exec. role, ec2-user, will also have these permissions when deployed
         API_URL = ssm_client.get_parameter(Name=ssm_api_url, WithDecryption=True)[
             "Parameter"
@@ -75,7 +75,7 @@ def _extract_ssm_values(ssm_api_url: str, ssm_api_key: str):
         )
 
 
-# Orchestrating function - ensures our app.py script does not become convoluted with config initiatialisation code
+# Orchestrating function - ensures our app.py script does not become convoluted with config init code
 def init_config(config_path: str, ssm_flag: bool):
     if ssm_flag:
         # Call the _extract_config_values function

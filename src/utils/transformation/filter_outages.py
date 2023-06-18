@@ -16,9 +16,6 @@ def filter_outages_by_datetime(outages: list[dict]):
             >= datetime(2022, 1, 1, 0, 0, 0, 0)
         ]
 
-        # Using a HOF... not actually quicker in this case as converting back to list
-        # filtered_outages = list(filter(lambda x: datetime.strptime(x.get("begin"), "%Y-%m-%dT%H:%M:%S.%fZ") <= datetime(2022, 1, 1, 0, 0, 0, 0), outages))
-
         # Return the filtered outages
         return filtered_outages_dt
     except Exception as ex:
