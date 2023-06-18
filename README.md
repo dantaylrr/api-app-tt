@@ -184,7 +184,7 @@ setup.py
 requirements.txt
 ```
 
-Let's finish off getting started by installing our dependencies listed in `requirements.txt` & setting up the project root as a packag(for relative imports).
+Let's finish off getting started by installing our dependencies listed in `requirements.txt` & setting up the project root as a package (for relative imports).
 
 Run the following from the project root:
 
@@ -194,7 +194,7 @@ pip3 install .
 
 This will set-up our working directory using the `setup.py` script in the project root.
 
-Note - if you want to make changes to code & have changes reflected in any subsequent runs, install `setup.py` in "developer" mode by specifying the `-e` flag to the above command.
+Note - if you want to make changes to code & have changes reflected in any subsequent application runs, install `setup.py` in "developer" mode by specifying the `-e` flag to the above command.
 
 Now that the above command has finished running - we are almost ready to run some tests & our application locally.
 
