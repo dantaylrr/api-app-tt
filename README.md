@@ -146,7 +146,7 @@ I understand that this isn't possible in the case of this project, so have utili
 
 I have however, decided to keep the AWS Parameter Store functionality in place & toggle whether it is used or not [here](https://github.com/dantaylrr/api-app-tt/blob/main/src/main/app.py#L47) using the `ssm_flag` parameter.
 
-Functionality of the `init_config` method with AWS Parameter Store is still acheivable by the user should they wish, they simply have to create the parameter names defined in `config.yaml` in their own AWS accounts & have the ability to retreive these at runtime.
+Functionality of the `init_config` method with AWS Parameter Store is still achievable by the user should they wish, they simply have to create the parameter names defined in `config.yaml` in their own AWS accounts & have the ability to retrieve these at runtime.
 
 # **Getting Started.**
 
@@ -218,7 +218,7 @@ Note - the Windows / Command Prompt equivalent of `export` is `set`.
 
 Values can be verified using the `echo` command.
 
-Once environment variables have been verfied, we can run the following commands, utilising `pytest`, python's most commonly used testing library.
+Once environment variables have been verified, we can run the following commands, utilising `pytest`, python's most commonly used testing library.
 
 ```
 python3 -m pytest -v tests/ -log-cli=true
@@ -256,7 +256,7 @@ Below is a list of potential improvements I would consider implementing given mo
 
 * **Verification methods of API responses** - in common production environments, data is constantly changing, being updated, appended to, growing etc. This application only deals with static data, if data was non-static & grew as time progressed, I would definitely look to validate any API responses in the application it self, making it further fault-tolerant.
 
-* **"Generalise" application inputs** - the current applcation is only concerned about the site-id "norwich-pear-tree". What if we also wanted our application to run for a different site-id? e.g. "kingfisher", we could do this by supplying a list of site-id inputs.
+* **"Generalise" application inputs** - the current application is only concerned about the site-id "norwich-pear-tree". What if we also wanted our application to run for a different site-id? e.g. "kingfisher", we could do this by supplying a list of site-id inputs.
 
 * **Containerisation of application** - this would allow my application to be deployed into any environment in a "lift-and-shift" manner. I have done this prior when deploying python code to a Lambda via Docker.
 

@@ -16,7 +16,7 @@ from src.utils.transformation.generate_result import produce_final_output
 
 """
 To enable other people to run this application, adding environment functionality for config initialisation
-In a normal working env. everyone should have access to the same AWS account for Parameter Store secret retreival - but obviously not the case here
+In a normal working env. everyone should have access to the same AWS account for Parameter Store secret retrieval - but obviously not the case here
 Using env. variables will also allow for easier unit/integration test validation from their local machine
 """
 
@@ -39,11 +39,11 @@ def main():
 
         - Omitting try/excepts in def main() as all utils functions have their own unique try/catch statements
         - To prevent secrets being exposed in code, I am using my PERSONAL AWS ACCOUNT & SSM Parameter Store for secret encryption
-            * This could be prevented by setting secrets as env. variables using "os" library - but wanted to demonstate best practices where possible
+            * This could be prevented by setting secrets as env. variables using "os" library - but wanted to demonstrate best practices where possible
     """
 
 
-    # SSM flag - set to true if user wants to retreive secrets from SSM, otherwise use env. variables - see README.md
+    # SSM flag - set to true if user wants to retrieve secrets from SSM, otherwise use env. variables - see README.md
     ssm_flag = True
 
     # Initialise config
