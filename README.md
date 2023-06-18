@@ -11,6 +11,7 @@
 <li><a href="#getting-started">Getting Started</a></li>
 <li><a href="#running-tests">Running tests</a></li>
 <li><a href="#running-the-application-locally">Running the application locally</a></li>
+<li><a href="#clean-up">Clean up</a></li>
 <li><a href="#troubleshooting">Troubleshooting</a></li>
 <li><a href="#potential-improvements">Potential improvements</a></li>
 <li><a href="#appendix---directory-structure">Appendix - Directory Structure</a></li>
@@ -130,6 +131,16 @@ which python3
 
 If successfully installed, you should see the local install location to the python executable.
 
+After we have successfully installed python, we will install a python package called `virtualenv`. This package will allow us to spin up a local, lightweight virtual environment where we can install our project dependencies & run our code.
+
+From the root directory of your computer, run the following:
+
+```
+pip3 install virtualenv
+```
+
+<br>
+
 **In more cases than not, it is also vital that the `ssm_flag` in `app.py` is set to `False` - more information on that can be found directly below.**
 
 Providing that we are planning to run this application locally & without AWS Parameter Store, user knowledge of API URL & Key values is essential.
@@ -184,6 +195,20 @@ setup.py
 requirements.txt
 ```
 
+Now, we want to create a virtual environment to install all of our dependencies, run tests & run our application code. You can create a virtual environment `env` using `virtualenv` installed in <a href="#prerequisites">Prerequisites</a> the following command from the project root:
+
+```
+python3 -m venv env
+```
+
+We will also have to activate our python virtualenv executable in order to run python code in our virtual environment, do this by running:
+
+```
+source env/bin/activate
+```
+
+We can verify that our virtual environment has been successfully created by running `pip3 list`, we should **NOT** see all of our global package installs.
+
 Let's finish off getting started by installing our dependencies listed in `requirements.txt` & setting up the project root as a package (for relative imports).
 
 Run the following from the project root:
@@ -214,7 +239,7 @@ export KRAKEN_API_URL=<url>
 export KRAKEN_API_KEY=<key>
 ```
 
-Note - the Windows / Command Prompt equivalent of `export` is `set`.
+**Note - the Windows / Command Prompt equivalent of `export` is `set`.**
 
 Values can be verified using the `echo` command.
 
@@ -243,6 +268,10 @@ You can verify the success of the application run by inspecting these logs, prov
 ```
 INFO:__main__:Site-info POST request response: Status code = 200.
 ```
+
+# **Clean up.**
+
+Do not forget to deactivate your virtual environment by running `deactivate` from the root of the project directory.
 
 # **Troubleshooting.**
 
