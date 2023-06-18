@@ -267,7 +267,7 @@ Outages filter function - outage began after 2022-01-01T00:00:00.000Z
 def test_invalid_outages_filter_by_datetime(invalid_outages):
     with pytest.raises(RuntimeError) as ex_info:
         # Call the function
-        filtered_outages_dt = filter_outages_by_datetime(outages=invalid_outages)
+        filter_outages_by_datetime(outages=invalid_outages)
 
     # We want to assert a RuntimeError exception being raised
     assert ex_info
