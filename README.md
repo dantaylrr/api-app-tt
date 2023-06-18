@@ -144,7 +144,7 @@ Typically, when working as part of a team in a professional development environm
 
 I understand that this isn't possible in the case of this project, so have utilised environment variables to allow the user to set API URL & Key values before running the application & tests locally.
 
-I have however, decided to keep the AWS Parameter Store functionality in place & toggle whether it is used or not [here](https://github.com/dantaylrr/api-app-tt/blob/main/src/main/app.py#L15) using the `ssm_flag` parameter.
+I have however, decided to keep the AWS Parameter Store functionality in place & toggle whether it is used or not [here](https://github.com/dantaylrr/api-app-tt/blob/main/src/main/app.py#L47) using the `ssm_flag` parameter.
 
 Functionality of the `init_config` method with AWS Parameter Store is still acheivable by the user should they wish, they simply have to create the parameter names defined in `config.yaml` in their own AWS accounts & have the ability to retreive these at runtime.
 
@@ -214,12 +214,14 @@ export KRAKEN_API_URL=<url>
 export KRAKEN_API_KEY=<key>
 ```
 
+Note - the Windows / Command Prompt equivalent of `export` is `set`.
+
 Values can be verified using the `echo` command.
 
 Once environment variables have been verfied, we can run the following commands, utilising `pytest`, python's most commonly used testing library.
 
 ```
-python3 -m pytest -v tests/* -log-cli=true
+python3 -m pytest -v tests/ -log-cli=true
 ```
 
 The above command will run both unit & integration tests.

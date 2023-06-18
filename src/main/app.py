@@ -20,9 +20,6 @@ In a normal working env. everyone should have access to the same AWS account for
 Using env. variables will also allow for easier unit/integration test validation from their local machine
 """
 
-# SSM flag - set to true if user wants to retreive secrets from SSM, otherwise use env. variables - see README.md
-ssm_flag = True
-
 # You can "print" logs to the console using stdout
 logging.basicConfig(stream=stdout, level=logging.INFO)
 # Instantiate logger for app.py using the "__name__" variable
@@ -44,6 +41,10 @@ def main():
         - To prevent secrets being exposed in code, I am using my PERSONAL AWS ACCOUNT & SSM Parameter Store for secret encryption
             * This could be prevented by setting secrets as env. variables using "os" library - but wanted to demonstate best practices where possible
     """
+
+
+    # SSM flag - set to true if user wants to retreive secrets from SSM, otherwise use env. variables - see README.md
+    ssm_flag = True
 
     # Initialise config
     API_URL, API_KEY = init_config(config_path="./config.yaml", ssm_flag=ssm_flag)
