@@ -1,0 +1,9 @@
+{
+    "id": "norwich-pear-tree",
+    "name": "Norwich Pear Tree",
+    "devices": [
+      {
+        "name": "Battery 1"
+      }
+    ]
+  }
