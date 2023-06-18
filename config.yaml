@@ -1,0 +1,5 @@
+prod:
+  secrets:
+    aws:
+      api-url: /secrets/kraken/tt/api/url
+      api-key: /secrets/kraken/tt/api/key
