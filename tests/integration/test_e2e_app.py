@@ -1,5 +1,6 @@
 from src.main.app import main
 
+
 def test_e2e_app():
     # Call our main() app
     response = main()

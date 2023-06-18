@@ -4,8 +4,8 @@ import logging
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-def produce_final_output(filtered_outages: dict, site_info_data: dict):
 
+def produce_final_output(filtered_outages: dict, site_info_data: dict):
     try:
         # We use our device list again so that we can match the "name" parameters
         devices = site_info_data.get("devices")
@@ -25,10 +25,14 @@ def produce_final_output(filtered_outages: dict, site_info_data: dict):
                 else:
                     # Else, do nothing
                     pass
-        
+
         # Return our output
         return filtered_outages
-    
+
     except Exception as ex:
-        logger.error(f"Failure to generate output JSON for POST request due to: {ex} - raising RuntimeError to prevent further downstream errors.")
-        raise RuntimeError(f"Failure to generate output JSON for POST request due to: {ex}.")
+        logger.error(
+            f"Failure to generate output JSON for POST request due to: {ex} - raising RuntimeError to prevent further downstream errors."
+        )
+        raise RuntimeError(
+            f"Failure to generate output JSON for POST request due to: {ex}."
+        )
