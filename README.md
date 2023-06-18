@@ -119,13 +119,13 @@ Application code is written exclusively in Python, in order for our application 
 We can do this using any package manager, such as [Homebrew](https://brew.sh/) - from the root directory of your computer, run the following once Homebrew is installed:
 
 ```
-$ brew install python3
+brew install python3
 ```
 
 Installation can be verified using the following command:
 
 ```
-$ which python3
+which python3
 ```
 
 If successfully installed, you should see the local install location to the python executable.
@@ -157,7 +157,7 @@ Once you have navigated to the appropriate directory, begin by cloning the repos
 From your current working directory, run:
 
 ```
-$ git clone git@github.com:dantaylrr/api-app-tt.git
+git clone git@github.com:dantaylrr/api-app-tt.git
 ```
 
 If cloning via SSH is proving to be problematic, you can attempt to clone the repository via HTTPs (but is generally not advised):
@@ -169,7 +169,7 @@ git clone https://github.com/dantaylrr/api-app-tt.git
 Once you have successfully cloned the repository locally, navigate to the root of the project:
 
 ```
-$ cd api-app-tt
+cd api-app-tt
 ```
 
 A simple `ls` command from this directory should yield the following:
@@ -207,11 +207,11 @@ As mentioned in <a href="#important-note-before-you-begin-ssm_flag">Important no
 Before we run our tests, let's define our environment variables, in the project root, run the following commands, replacing the values with the API URL & Key that you know of.
 
 ```
-$ export KRAKEN_API_URL=<url>
+export KRAKEN_API_URL=<url>
 ```
 &
 ```
-$ export KRAKEN_API_KEY=<key>
+export KRAKEN_API_KEY=<key>
 ```
 
 Values can be verified using the `echo` command.
@@ -219,7 +219,7 @@ Values can be verified using the `echo` command.
 Once environment variables have been verfied, we can run the following commands, utilising `pytest`, python's most commonly used testing library.
 
 ```
-$ python3 -m pytest -v tests/* -log-cli=true
+python3 -m pytest -v tests/* -log-cli=true
 ```
 
 The above command will run both unit & integration tests.
