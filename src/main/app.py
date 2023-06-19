@@ -44,7 +44,7 @@ def main():
 
 
     # SSM flag - set to true if user wants to retrieve secrets from SSM, otherwise use env. variables - see README.md
-    ssm_flag = True
+    ssm_flag = False
 
     # Initialise config
     API_URL, API_KEY = init_config(config_path="./config.yaml", ssm_flag=ssm_flag)
