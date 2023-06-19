@@ -281,6 +281,16 @@ INFO:__main__:Site-info POST request response: Status code = 200.
 
 Do not forget to deactivate your virtual environment by running `deactivate` from the root of the project directory.
 
+Once you have deactivated your local virtual environment, unset the `KRAKEN_API_URL` & `KRAKEN_API_KEY` environment variables:
+
+```
+unset KRAKEN_API_URL
+```
+&
+```
+unset KRAKEN_API_KEY
+```
+
 # **Troubleshooting.**
 
 Any status code outside of a 2xx (200) error you might see here means that the application has failed to post the correct payload to the API endpoint, try starting again from <a href="#prerequisites">Prerequisites</a> before attempting another run.
@@ -291,9 +301,11 @@ Any `RuntimeError` that may arise after running the above command means that the
 
 Below is a list of potential improvements I would consider implementing given more time & if this piece of work was to go into a production environment:
 
-* **Verification methods of API responses** - in common production environments, data is constantly changing, being updated, appended to, growing etc. This application only deals with static data, if data was non-static & grew as time progressed, I would definitely look to validate any API responses in the application it self, making it further fault-tolerant.
+* **Verification methods of API responses** - in common production environments, data is constantly changing, being updated, appended to, growing etc. This application only deals with static data, if data was non-static & grew as time progressed, I would definitely look to validate any API responses in the application it self (either via. a custom method, or an external library such as great-expectations), making it further fault-tolerant.
 
 * **"Generalise" application inputs** - the current application is only concerned about the site-id "norwich-pear-tree". What if we also wanted our application to run for a different site-id? e.g. "kingfisher", we could do this by supplying a list of site-id inputs.
+
+* **Command Line Arguments instead of env. variables** - this might have been a better approach for a standalone local application. Typically however, if we are deploying a serverless application (i.e. a Lambda function), we would definitely make use of environment variables.
 
 * **Containerisation of application** - this would allow my application to be deployed into any environment in a "lift-and-shift" manner. I have done this prior when deploying python code to a Lambda via Docker.
 
