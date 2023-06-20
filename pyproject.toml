@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kraken-technical-test"
+version = "0.1"
+authors = [
+    {name = "Daniel Taylor", email = "danieltaylorr97@gmail.com"},
+]
+description = "Kraken technical test submission that interacts with an external API."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3"
+]
+
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools]
+packages = ["src", "src.main", "src.utils", "src.utils.api", "src.utils.config", "src.utils.transformation"]
